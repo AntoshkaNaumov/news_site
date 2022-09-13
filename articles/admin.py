@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.core.exceptions import ValidationError
 from django.forms import BaseInlineFormSet
-
 from .models import Article, Scope, ArticleScope
 
 @admin.register(Scope)
@@ -42,3 +41,5 @@ class ArticleScopeInline(admin.TabularInline):
 class ArticleAdmin(admin.ModelAdmin):
     inlines = [ArticleScopeInline,]
 
+admin.site.site_title = 'Админ-панель новостоного сайта'
+admin.site.site_header = 'Админ-панель новостного сайта'
